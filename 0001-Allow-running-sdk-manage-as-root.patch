@@ -1,0 +1,21 @@
+--- a/usr/bin/sdk-manage
++++ b/usr/bin/sdk-manage
+@@ -138,18 +138,6 @@
+ EOF
+ }
+
+-if [[ $EUID -eq 0 ]]; then
+-    echo >&2 "WARNING: Invoking $0 as root is deprecated."
+-    if [[ -n ${SUDO_USER:-} ]]; then
+-        exec sudo -i -u $SUDO_USER $0 "$@"
+-        echo >&2 "sudo as '$SUDO_USER' failed"
+-        exit 1
+-    else
+-        echo >&2 "Cannot determine Mer SDK user. Invoke $0 as non-root to fix this."
+-        exit 1
+-    fi
+-fi
+-
+ ################################################################'
+ # Common utilities
+

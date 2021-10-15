@@ -1,0 +1,13 @@
+--- a/usr/bin/sdk-assistant
++++ b/usr/bin/sdk-assistant
+@@ -350,10 +350,6 @@
+     fail "The '--snapshots-of' option can only be used with the 'remove' command"
+ fi
+
+-if [[ $EUID -eq 0 ]]; then
+-    fail "$(basename $0) must not be run as root."
+-fi
+-
+ if [[ $OPT_LIST ]]; then
+     # list requested, just do it
+     list "$OPT_TYPE"
